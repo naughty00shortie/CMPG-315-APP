@@ -9,6 +9,13 @@ namespace Server
 {
     class Program
     {
+        private struct Client
+        {
+            public Socket _socket;
+            public string _name;
+            public string _chat;
+        }
+        private static List<Client> connectedClients = new List<Client>();
         static async Task Main(string[] args)
         {
             IPAddress ipAddress = IPAddress.Any; // listen on any available IP address
@@ -25,27 +32,26 @@ namespace Server
             listener.Listen(1);
 
             Console.WriteLine("Server started. Listening for connections...");
-            List<Socket> connectedClients = new List<Socket>();
+             
             while (true)
             { 
                 try
                 {
-                    Socket client = await listener.AcceptAsync();
+                    Client client = new Client();
+                    client._chat = "Global";
+                    client._socket = await listener.AcceptAsync();
                     connectedClients.Add(client);
-                    Console.WriteLine("Client connected: {0}", client.RemoteEndPoint);
+                    Console.WriteLine("Client connected: {0}", client._socket.RemoteEndPoint);
 
-                    IPEndPoint remoteIpEndPoint = (IPEndPoint)client.RemoteEndPoint;
+                    IPEndPoint remoteIpEndPoint = (IPEndPoint)client._socket.RemoteEndPoint;
                     IPAddress clientIpAddress = remoteIpEndPoint.Address;
                     Console.WriteLine("Client IP address: {0}", clientIpAddress);
-
                     
-                    string chatLog = File.ReadAllText("chatlog.txt");
+                    string chatLog = File.ReadAllText("chats/Global.txt");
                     byte[] chatLogBytes = Encoding.UTF8.GetBytes(chatLog);
-                    await client.SendAsync(chatLogBytes, SocketFlags.None);
+                    await client._socket.SendAsync(chatLogBytes, SocketFlags.None);
 
-                    Task.Run(() => ReceiveMessages(client, connectedClients));
-                        
-                    
+                    Task.Run(() => ReceiveMessages(client._socket));
                 }
                 
                 catch (Exception ex)
@@ -55,22 +61,55 @@ namespace Server
             }
         }
 
-        static async Task ReceiveMessages(Socket client, List<Socket> connectedClients)
+        static async Task SendUpdatedClientList()
+        {
+            Thread.Sleep(1000);
+            string clientList = "#LIST#";
+            foreach (var client in connectedClients)
+            {
+                clientList += client._name + "|\n";
+            }
+            foreach (var client in connectedClients)
+            {
+                byte[] clientListBytes = Encoding.UTF8.GetBytes(clientList);
+                await client._socket.SendAsync(clientListBytes, SocketFlags.None);
+            }
+        }
+        static async Task ReceiveMessages(Socket clientSocket)
         {
             byte[] buffer = new byte[1024];
             while (true)
             {
-                int numBytes = await client.ReceiveAsync(buffer, SocketFlags.None);
+                int numBytes = await clientSocket.ReceiveAsync(buffer, SocketFlags.None);
                 string message = Encoding.UTF8.GetString(buffer, 0, numBytes);
                 Console.WriteLine("Received message: " + message);
-                string chatLog = File.ReadAllText("chatlog.txt");
-                chatLog += message + "\n";
-                File.WriteAllText("chatlog.txt", chatLog);
-                byte[] chatLogBytes = Encoding.UTF8.GetBytes(chatLog);
-                foreach (Socket connectedClient in connectedClients)
-                { 
-                    if(connectedClient != client)
-                        await connectedClient.SendAsync(chatLogBytes, SocketFlags.None);
+                if (message == "#DISCONNECT#")//Disconnects the client
+                {
+                    connectedClients.Find(client => client._socket == clientSocket)._socket.Close();
+                    connectedClients.Remove(connectedClients.Find(client => client._socket == clientSocket));
+                    SendUpdatedClientList();
+                }
+                else if (message.Contains("#NAME#"))//Adds the name of the client to the list
+                {
+                    message = message.Remove(0, 6);
+                    Client client = connectedClients.Find(client => client._socket == clientSocket);
+                    connectedClients.Remove(connectedClients.Find(client => client._socket == clientSocket));
+                    client._name = message;
+                    connectedClients.Add(client);
+                     SendUpdatedClientList();
+                }
+                else
+                {
+                    string chatLog = File.ReadAllText("chats/Global.txt");
+                    chatLog += message + "\n";
+                    File.WriteAllText("chats/Global.txt", chatLog);
+                    byte[] chatLogBytes = Encoding.UTF8.GetBytes( connectedClients.Find(client => client._socket == clientSocket)._name+": " + message+"\n");
+
+                    foreach (Client connectedClient in connectedClients)
+                    { 
+                        // if(connectedClient._socket != clientSocket)
+                             await connectedClient._socket.SendAsync(chatLogBytes, SocketFlags.None);
+                    }
                 }
             }
         }
