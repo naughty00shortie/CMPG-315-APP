@@ -10,14 +10,16 @@ namespace Client_UI
     public partial class Form1 : Form
     {
         private Socket server;
+        private string connectedName;
         public Form1(string name)
         {
             InitializeComponent();
-            Connect(name);
+            connectedName = name;
+            Connect();
         }
 
 
-        private async void Connect(string name)
+        private async void Connect()
         {
             IPAddress serverIpAddress = IPAddress.Parse("127.0.0.1");
             int port = 20;
@@ -27,11 +29,11 @@ namespace Client_UI
                 
                 server = new Socket(serverIpAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 await server.ConnectAsync(serverIpAddress, port);
-                sendMessage("#NAME#" + name);
+                sendMessage("#NAME#" + connectedName);
 
 
                 Task.Run(() => ReceiveMessages());
-                label4.Text = "Connected as: " + name;
+                label4.Text = "Connected as: " + connectedName;
             }
             catch (Exception ex)
             {
@@ -53,15 +55,28 @@ namespace Client_UI
                     listBox1.Invoke(new Action(() =>
                     {
                         listBox1.Items.Clear();
+                        listBox1.Items.Add("Global");
                     }));
-                    message = message.Replace("#LIST#", "");
+                    message = message.Replace("#LIST#", "").Replace("\n", "");
                     message.Split('|', StringSplitOptions.RemoveEmptyEntries).ToList().ForEach(x =>
                     {
                         listBox1.Invoke(new Action(() =>
                         {
-                            listBox1.Items.Add(x);
+                            if (x!= connectedName)
+                            {
+                                listBox1.Items.Add(x);
+                            }
                         }));
                     });
+                }
+                else if (message.Contains("#CHAT#"))
+                {
+                    message = message.Replace("#CHAT#", "");
+                    richTextBox1.Invoke(new Action(() =>
+                    {
+                        richTextBox1.Clear();
+                        richTextBox1.AppendText(message + "\n");
+                    }));
                 }
                 else
                 {
@@ -78,7 +93,7 @@ namespace Client_UI
             sendMessage(textBox2.Text);
         }
 
-        private async void sendMessage(string message)
+        public async void sendMessage(string message)
         {
             if (!string.IsNullOrEmpty(message))
             {
@@ -94,6 +109,25 @@ namespace Client_UI
             sendMessage("#DISCONNECT#");
             Thread.Sleep(500);
             Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FrmGroup frmGroup = new FrmGroup(listBox1,this);
+            frmGroup.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+            string message = listBox1.SelectedItem.ToString().Replace("\n", "");
+            sendMessage("#CHAT#" + message);
+            label5.Text = "Chatting in: " + message;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

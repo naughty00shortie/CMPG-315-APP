@@ -16,3 +16,4 @@ C:\dev\315APP\CMPG-315-APP\Client-UI\obj\Debug\net6.0-windows\Client-UI.pdb
 C:\dev\315APP\CMPG-315-APP\Client-UI\obj\Debug\net6.0-windows\Client-UI.genruntimeconfig.cache
 C:\dev\315APP\CMPG-315-APP\Client-UI\obj\Debug\net6.0-windows\ref\Client-UI.dll
 C:\dev\315APP\CMPG-315-APP\Client-UI\obj\Debug\net6.0-windows\Client_UI.FrmConnect.resources
+C:\dev\315APP\CMPG-315-APP\Client-UI\obj\Debug\net6.0-windows\Client_UI.FrmGroup.resources

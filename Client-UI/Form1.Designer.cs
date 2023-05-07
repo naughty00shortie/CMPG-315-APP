@@ -35,10 +35,6 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -47,7 +43,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,49 +101,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(38, 234);
+            this.button1.Location = new System.Drawing.Point(50, 234);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 15;
             this.button1.Text = "Open Chat";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.listBox2);
-            this.panel2.Location = new System.Drawing.Point(778, 49);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(189, 293);
-            this.panel2.TabIndex = 16;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(38, 234);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Open Chat";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 15);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Privious Chats";
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 15;
-            this.listBox2.Location = new System.Drawing.Point(32, 27);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(118, 184);
-            this.listBox2.TabIndex = 12;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -156,7 +115,7 @@
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.listBox3);
-            this.panel3.Location = new System.Drawing.Point(1004, 49);
+            this.panel3.Location = new System.Drawing.Point(797, 49);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(189, 293);
             this.panel3.TabIndex = 17;
@@ -169,6 +128,7 @@
             this.button5.TabIndex = 16;
             this.button5.Text = "Create Group";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -178,6 +138,7 @@
             this.button4.TabIndex = 15;
             this.button4.Text = "Open Chat";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label3
             // 
@@ -223,7 +184,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
@@ -233,8 +193,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -250,10 +208,6 @@
         private ListBox listBox1;
         private Panel panel1;
         private Button button1;
-        private Panel panel2;
-        private Button button3;
-        private Label label1;
-        private ListBox listBox2;
         private Panel panel3;
         private Button button5;
         private Button button4;

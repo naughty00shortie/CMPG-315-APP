@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\dev\\315APP\\CMPG-315-APP\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\dev\\Server\\Server.csproj",
+      "projectPath": "C:\\dev\\315APP\\CMPG-315-APP\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\shortie\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\Server\\obj\\",
+      "outputPath": "C:\\dev\\315APP\\CMPG-315-APP\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

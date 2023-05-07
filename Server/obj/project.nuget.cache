@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T/iXkhoAzPRj/ytE5AibjoLcN79ZvzvN93XosYtKyVM+3ym7IHolixmM42bBLLVsuAR2XF8uJqyCWFtBv6QVLA==",
+  "dgSpecHash": "83yLUEjanUrox3/F1agYIZzU63xJVMnbav6DqhdjiY3s9mM9RKp2wqHA5c0U3CZkHx96Apron0KuKQmYyXLmbw==",
   "success": true,
-  "projectFilePath": "C:\\dev\\Server\\Server.csproj",
+  "projectFilePath": "C:\\dev\\315APP\\CMPG-315-APP\\Server\\Server.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
