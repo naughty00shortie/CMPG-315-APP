@@ -14,20 +14,24 @@ namespace Client_UI
     {
         private ListBox mainListBox;
         private Form1 mainForm;
-        public FrmGroup(ListBox listbox, Form1 form)
+        private string name;
+        public FrmGroup(ListBox listbox, Form1 form,string name)
         {
             InitializeComponent();
             mainListBox = listbox;
+            mainForm = form;
+            this.name = name;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string message = "#GROUP#";
+            string message = "#CREATE#" + name + "|";
             foreach (var item in listBox2.Items)
             {
                 message += item.ToString() + "|";
             }
-            mainForm.sendMessage(message);
+            
+            mainForm.sendMessage(message.Substring(0, message.Length - 1));
             this.Close();
         }
 
@@ -36,15 +40,22 @@ namespace Client_UI
             listBox1.Items.Clear();
             foreach (var item in mainListBox.Items)
             {
-                listBox1.Items.Add(item.ToString());
+                if (item.ToString() != "Global")
+                {
+                    listBox1.Items.Add(item.ToString());
+                }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+
             if (listBox1.SelectedItem != null)
             {
                 listBox2.Items.Add(listBox1.SelectedItem);
+                listBox1.Items.Remove(listBox1.SelectedItem);
             }
         }
 

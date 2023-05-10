@@ -153,6 +153,8 @@
             // 
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 15;
+            this.listBox3.Items.AddRange(new object[] {
+            "Global"});
             this.listBox3.Location = new System.Drawing.Point(32, 27);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(118, 184);
@@ -191,6 +193,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

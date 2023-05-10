@@ -21,12 +21,11 @@ namespace Client_UI
 
         private async void Connect()
         {
-            IPAddress serverIpAddress = IPAddress.Parse("127.0.0.1");
+            IPAddress serverIpAddress = IPAddress.Parse("64.226.64.204");//127.0.0.1    64.226.64.204
             int port = 20;
 
             try
             {
-                
                 server = new Socket(serverIpAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 await server.ConnectAsync(serverIpAddress, port);
                 sendMessage("#NAME#" + connectedName);
@@ -55,7 +54,6 @@ namespace Client_UI
                     listBox1.Invoke(new Action(() =>
                     {
                         listBox1.Items.Clear();
-                        listBox1.Items.Add("Global");
                     }));
                     message = message.Replace("#LIST#", "").Replace("\n", "");
                     message.Split('|', StringSplitOptions.RemoveEmptyEntries).ToList().ForEach(x =>
@@ -77,6 +75,29 @@ namespace Client_UI
                         richTextBox1.Clear();
                         richTextBox1.AppendText(message + "\n");
                     }));
+                }
+                else if(message.Contains("#GROUP#"))
+                {
+                    if (message.Contains("|"))
+                    {
+                        message = message.Substring(0, message.Length - 1);
+                        listBox1.Invoke(new Action(() =>
+                        {
+                            listBox3.Items.Clear();
+                            listBox3.Items.Add("Global");
+                        }));
+                        message = message.Replace("#GROUP#", "").Replace("\n", "");
+                        message.Split('|', StringSplitOptions.RemoveEmptyEntries).ToList().ForEach(x =>
+                        {
+                            listBox1.Invoke(new Action(() =>
+                            {
+                                if (x != connectedName)
+                                {
+                                    listBox3.Items.Add(x);
+                                }
+                            }));
+                        });
+                    }
                 }
                 else
                 {
@@ -113,19 +134,33 @@ namespace Client_UI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            FrmGroup frmGroup = new FrmGroup(listBox1,this);
+            FrmGroup frmGroup = new FrmGroup(listBox1,this,connectedName);
             frmGroup.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            richTextBox1.Clear();
-            string message = listBox1.SelectedItem.ToString().Replace("\n", "");
-            sendMessage("#CHAT#" + message);
-            label5.Text = "Chatting in: " + message;
+            if (listBox1.SelectedItem!= null)
+            {
+                richTextBox1.Clear();
+                string message = listBox1.SelectedItem.ToString().Replace("\n", "");
+                sendMessage("#CHAT#" + message);
+                label5.Text = "Chatting in: " + message;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
+        {
+            if (listBox3.SelectedItem!= null)
+            {
+                richTextBox1.Clear();
+                string message = listBox3.SelectedItem.ToString().Replace("\n", "");
+                sendMessage("#GROUP#" + message);
+                label5.Text = "Chatting in: " + message;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
