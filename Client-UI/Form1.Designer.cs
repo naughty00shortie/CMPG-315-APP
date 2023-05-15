@@ -233,7 +233,7 @@
             Controls.Add(textBox2);
             Controls.Add(richTextBox1);
             Name = "Form1";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             FormClosed += Form1_FormClosed;
             Load += Form1_Load;
