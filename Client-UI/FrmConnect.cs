@@ -17,15 +17,6 @@ namespace Client_UI
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            button1.Visible = false;
-            textBox1.Visible = false;
-            Form1 frm = new Form1(textBox1.Text);
-            this.Hide();
-            frm.Show();
-        }
-
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {

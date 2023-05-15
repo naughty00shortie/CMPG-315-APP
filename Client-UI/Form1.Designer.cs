@@ -34,14 +34,11 @@
             listBox1 = new ListBox();
             panel1 = new Panel();
             btnOpenChat = new Round_Button();
-            button1 = new Button();
             panel3 = new Panel();
             btnOpenGroup = new Round_Button();
             btnCreatGroup = new Round_Button();
             label3 = new Label();
             listBox3 = new ListBox();
-            button5 = new Button();
-            button4 = new Button();
             label4 = new Label();
             label5 = new Label();
             round_Button1 = new Round_Button();
@@ -113,16 +110,6 @@
             btnOpenChat.UseVisualStyleBackColor = false;
             btnOpenChat.Click += btnOpenChat_Click;
             // 
-            // button1
-            // 
-            button1.Location = new Point(617, 348);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 15;
-            button1.Text = "Open Chat";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // panel3
             // 
             panel3.BackColor = SystemColors.ButtonFace;
@@ -193,26 +180,6 @@
             listBox3.Size = new Size(118, 184);
             listBox3.TabIndex = 12;
             // 
-            // button5
-            // 
-            button5.Location = new Point(891, 348);
-            button5.Name = "button5";
-            button5.Size = new Size(92, 23);
-            button5.TabIndex = 16;
-            button5.Text = "Create Group";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(801, 348);
-            button4.Name = "button4";
-            button4.Size = new Size(84, 23);
-            button4.TabIndex = 15;
-            button4.Text = "Open Chat";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -258,9 +225,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(1013, 481);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button1);
             Controls.Add(round_Button1);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -287,10 +251,7 @@
         private Label label2;
         private ListBox listBox1;
         private Panel panel1;
-        private Button button1;
         private Panel panel3;
-        private Button button5;
-        private Button button4;
         private Label label3;
         private ListBox listBox3;
         private Label label4;

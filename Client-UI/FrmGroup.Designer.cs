@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             listBox1 = new ListBox();
-            button1 = new Button();
-            button2 = new Button();
             listBox2 = new ListBox();
-            button3 = new Button();
             label1 = new Label();
             label2 = new Label();
             btnAddToGroup = new Round_Button();
@@ -54,26 +51,6 @@
             listBox1.Size = new Size(143, 199);
             listBox1.TabIndex = 0;
             // 
-            // button1
-            // 
-            button1.Location = new Point(247, 25);
-            button1.Name = "button1";
-            button1.Size = new Size(34, 25);
-            button1.TabIndex = 1;
-            button1.Text = ">";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(247, 222);
-            button2.Name = "button2";
-            button2.Size = new Size(34, 25);
-            button2.TabIndex = 2;
-            button2.Text = "<";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // listBox2
             // 
             listBox2.FormattingEnabled = true;
@@ -83,16 +60,6 @@
             listBox2.Size = new Size(143, 199);
             listBox2.TabIndex = 3;
             listBox2.SelectedIndexChanged += listBox2_SelectedIndexChanged;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(387, 296);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 4;
-            button3.Text = "Create";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
             // label1
             // 
@@ -213,9 +180,6 @@
             Controls.Add(btnRemoveFromGroup);
             Controls.Add(btnAddToGroup);
             Controls.Add(label1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Name = "FrmGroup";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmGroup";
@@ -231,10 +195,7 @@
         #endregion
 
         private ListBox listBox1;
-        private Button button1;
-        private Button button2;
         private ListBox listBox2;
-        private Button button3;
         private Label label1;
         private Label label2;
         private Round_Button btnAddToGroup;

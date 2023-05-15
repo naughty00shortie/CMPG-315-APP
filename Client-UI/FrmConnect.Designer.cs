@@ -30,7 +30,6 @@
         {
             label1 = new Label();
             textBox1 = new TextBox();
-            button1 = new Button();
             label2 = new Label();
             btnLogin = new Round_Button();
             SuspendLayout();
@@ -38,7 +37,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(48, 72);
+            label1.Location = new Point(60, 70);
             label1.Name = "label1";
             label1.Size = new Size(72, 15);
             label1.TabIndex = 5;
@@ -46,26 +45,16 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(48, 90);
+            textBox1.Location = new Point(60, 88);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(165, 23);
             textBox1.TabIndex = 4;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(104, 215);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "Connect";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Sylfaen", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(36, 9);
+            label2.Location = new Point(41, 9);
             label2.Name = "label2";
             label2.Size = new Size(228, 35);
             label2.TabIndex = 7;
@@ -100,7 +89,6 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBox1);
-            Controls.Add(button1);
             Name = "FrmConnect";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmConnect";
@@ -112,7 +100,6 @@
 
         private Label label1;
         private TextBox textBox1;
-        private Button button1;
         private Label label2;
         private Round_Button btnLogin;
     }
