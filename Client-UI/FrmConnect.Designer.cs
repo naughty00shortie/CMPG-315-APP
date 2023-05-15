@@ -68,6 +68,7 @@
             btnLogin.BorderRadius = 40;
             btnLogin.BorderSize = 0;
             btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatAppearance.MouseDownBackColor = Color.Lime;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.ForeColor = Color.White;
             btnLogin.Location = new Point(91, 119);

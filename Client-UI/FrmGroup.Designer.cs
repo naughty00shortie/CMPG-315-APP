@@ -38,6 +38,8 @@
             panel1 = new Panel();
             panel2 = new Panel();
             label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -73,9 +75,10 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(38, 5);
             label2.Name = "label2";
-            label2.Size = new Size(91, 15);
+            label2.Size = new Size(94, 15);
             label2.TabIndex = 6;
             label2.Text = "People in group";
             label2.Click += label2_Click;
@@ -88,9 +91,10 @@
             btnAddToGroup.BorderRadius = 40;
             btnAddToGroup.BorderSize = 0;
             btnAddToGroup.FlatAppearance.BorderSize = 0;
+            btnAddToGroup.FlatAppearance.MouseDownBackColor = Color.Lime;
             btnAddToGroup.FlatStyle = FlatStyle.Flat;
             btnAddToGroup.ForeColor = Color.White;
-            btnAddToGroup.Location = new Point(240, 75);
+            btnAddToGroup.Location = new Point(240, 88);
             btnAddToGroup.Name = "btnAddToGroup";
             btnAddToGroup.Size = new Size(53, 48);
             btnAddToGroup.TabIndex = 7;
@@ -107,9 +111,10 @@
             btnRemoveFromGroup.BorderRadius = 40;
             btnRemoveFromGroup.BorderSize = 0;
             btnRemoveFromGroup.FlatAppearance.BorderSize = 0;
+            btnRemoveFromGroup.FlatAppearance.MouseDownBackColor = Color.Red;
             btnRemoveFromGroup.FlatStyle = FlatStyle.Flat;
             btnRemoveFromGroup.ForeColor = Color.White;
-            btnRemoveFromGroup.Location = new Point(240, 145);
+            btnRemoveFromGroup.Location = new Point(240, 172);
             btnRemoveFromGroup.Name = "btnRemoveFromGroup";
             btnRemoveFromGroup.Size = new Size(53, 48);
             btnRemoveFromGroup.TabIndex = 8;
@@ -126,9 +131,10 @@
             btnCreateGroup.BorderRadius = 40;
             btnCreateGroup.BorderSize = 0;
             btnCreateGroup.FlatAppearance.BorderSize = 0;
+            btnCreateGroup.FlatAppearance.MouseDownBackColor = Color.Lime;
             btnCreateGroup.FlatStyle = FlatStyle.Flat;
             btnCreateGroup.ForeColor = Color.White;
-            btnCreateGroup.Location = new Point(198, 286);
+            btnCreateGroup.Location = new Point(198, 279);
             btnCreateGroup.Name = "btnCreateGroup";
             btnCreateGroup.Size = new Size(131, 42);
             btnCreateGroup.TabIndex = 9;
@@ -162,11 +168,32 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(34, 5);
             label3.Name = "label3";
-            label3.Size = new Size(79, 15);
+            label3.Size = new Size(82, 15);
             label3.TabIndex = 0;
             label3.Text = "People online";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(253, 70);
+            label4.Name = "label4";
+            label4.Size = new Size(29, 15);
+            label4.TabIndex = 12;
+            label4.Text = "Add";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(243, 155);
+            label5.Name = "label5";
+            label5.Size = new Size(50, 15);
+            label5.TabIndex = 13;
+            label5.Text = "Remove";
             // 
             // FrmGroup
             // 
@@ -174,6 +201,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(539, 355);
+            Controls.Add(label5);
+            Controls.Add(label4);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(btnCreateGroup);
@@ -204,5 +233,7 @@
         private Panel panel1;
         private Panel panel2;
         private Label label3;
+        private Label label4;
+        private Label label5;
     }
 }
