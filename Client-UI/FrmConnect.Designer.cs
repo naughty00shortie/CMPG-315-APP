@@ -58,7 +58,7 @@
             label2.Name = "label2";
             label2.Size = new Size(228, 35);
             label2.TabIndex = 7;
-            label2.Text = "Local Messagener";
+            label2.Text = "Local Messegener";
             // 
             // btnLogin
             // 
