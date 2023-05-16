@@ -60,7 +60,7 @@ namespace Client_UI
                     {
                         listBox1.Invoke(new Action(() =>
                         {
-                            if (x!= connectedName)
+                            if (x != connectedName)
                             {
                                 listBox1.Items.Add(x);
                             }
@@ -76,7 +76,7 @@ namespace Client_UI
                         richTextBox1.AppendText(message + "\n");
                     }));
                 }
-                else if(message.Contains("#GROUP#"))
+                else if (message.Contains("#GROUP#"))
                 {
                     if (message.Contains("|"))
                     {
@@ -134,13 +134,13 @@ namespace Client_UI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            FrmGroup frmGroup = new FrmGroup(listBox1,this,connectedName);
+            FrmGroup frmGroup = new FrmGroup(listBox1, this, connectedName);
             frmGroup.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem!= null)
+            if (listBox1.SelectedItem != null)
             {
                 richTextBox1.Clear();
                 string message = listBox1.SelectedItem.ToString().Replace("\n", "");
@@ -162,7 +162,7 @@ namespace Client_UI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (listBox3.SelectedItem!= null)
+            if (listBox3.SelectedItem != null)
             {
                 richTextBox1.Clear();
                 string message = listBox3.SelectedItem.ToString().Replace("\n", "");
@@ -174,6 +174,44 @@ namespace Client_UI
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void round_Button1_Click(object sender, EventArgs e)
+        {
+            sendMessage(textBox2.Text);
+        }
+
+        private void round_Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpenChat_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem != null)
+            {
+                richTextBox1.Clear();
+                string message = listBox1.SelectedItem.ToString().Replace("\n", "");
+                sendMessage("#CHAT#" + message);
+                label5.Text = "Chatting in: " + message;
+            }
+        }
+
+        private void btnOpenGroup_Click(object sender, EventArgs e)
+        {
+            if (listBox3.SelectedItem != null)
+            {
+                richTextBox1.Clear();
+                string message = listBox3.SelectedItem.ToString().Replace("\n", "");
+                sendMessage("#GROUP#" + message);
+                label5.Text = "Chatting in: " + message;
+            }
+        }
+
+        private void btnCreatGroup_Click(object sender, EventArgs e)
+        {
+            FrmGroup frmGroup = new FrmGroup(listBox1, this, connectedName);
+            frmGroup.Show();
         }
     }
 }

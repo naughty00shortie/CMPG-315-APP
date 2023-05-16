@@ -28,56 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label1 = new Label();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            btnLogin = new Round_Button();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Name";
+            label1.AutoSize = true;
+            label1.Location = new Point(60, 70);
+            label1.Name = "label1";
+            label1.Size = new Size(72, 15);
+            label1.TabIndex = 5;
+            label1.Text = "Enter Name:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(48, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 23);
-            this.textBox1.TabIndex = 4;
+            textBox1.Location = new Point(60, 88);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(165, 23);
+            textBox1.TabIndex = 4;
             // 
-            // button1
+            // label2
             // 
-            this.button1.Location = new System.Drawing.Point(48, 129);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Connect";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            label2.AutoSize = true;
+            label2.Font = new Font("Sylfaen", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(41, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(228, 35);
+            label2.TabIndex = 7;
+            label2.Text = "Local Messegener";
+            // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = Color.DarkSlateBlue;
+            btnLogin.BackgroundColor = Color.DarkSlateBlue;
+            btnLogin.BorderColor = Color.MediumPurple;
+            btnLogin.BorderRadius = 40;
+            btnLogin.BorderSize = 0;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatAppearance.MouseDownBackColor = Color.Lime;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(91, 119);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(108, 54);
+            btnLogin.TabIndex = 8;
+            btnLogin.Text = "Login";
+            btnLogin.TextColor = Color.White;
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click_1;
             // 
             // FrmConnect
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 250);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Name = "FrmConnect";
-            this.Text = "FrmConnect";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientActiveCaption;
+            ClientSize = new Size(297, 206);
+            Controls.Add(btnLogin);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(textBox1);
+            Name = "FrmConnect";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FrmConnect";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Label label1;
         private TextBox textBox1;
-        private Button button1;
+        private Label label2;
+        private Round_Button btnLogin;
     }
 }
