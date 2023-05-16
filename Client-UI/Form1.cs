@@ -147,6 +147,17 @@ namespace Client_UI
                 sendMessage("#CHAT#" + message);
                 label5.Text = "Chatting in: " + message;
             }
+
+            Thread.Sleep(500);
+            
+            if (listBox1.SelectedItem != null)
+            {
+                richTextBox1.Clear();
+                string message = listBox1.SelectedItem.ToString().Replace("\n", "");
+                sendMessage("#CHAT#" + message);
+                label5.Text = "Chatting in: " + message;
+            }
+
         }
 
         private void button4_Click(object sender, EventArgs e)
