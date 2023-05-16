@@ -28,233 +28,234 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox2 = new TextBox();
-            richTextBox1 = new RichTextBox();
-            label2 = new Label();
-            listBox1 = new ListBox();
-            panel1 = new Panel();
-            btnOpenChat = new Round_Button();
-            panel3 = new Panel();
-            btnOpenGroup = new Round_Button();
-            btnCreatGroup = new Round_Button();
-            label3 = new Label();
-            listBox3 = new ListBox();
-            label4 = new Label();
-            label5 = new Label();
-            round_Button1 = new Round_Button();
-            panel1.SuspendLayout();
-            panel3.SuspendLayout();
-            SuspendLayout();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnOpenChat = new Client_UI.Round_Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnOpenGroup = new Client_UI.Round_Button();
+            this.btnCreatGroup = new Client_UI.Round_Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.round_Button1 = new Client_UI.Round_Button();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.SuspendLayout();
             // 
             // textBox2
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(12, 418);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(440, 23);
-            textBox2.TabIndex = 4;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Location = new System.Drawing.Point(12, 418);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(440, 23);
+            this.textBox2.TabIndex = 4;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // richTextBox1
             // 
-            richTextBox1.BorderStyle = BorderStyle.FixedSingle;
-            richTextBox1.Location = new Point(12, 49);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.ReadOnly = true;
-            richTextBox1.Size = new Size(535, 334);
-            richTextBox1.TabIndex = 6;
-            richTextBox1.Text = "";
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.Location = new System.Drawing.Point(12, 49);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(535, 334);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(50, 3);
-            label2.Name = "label2";
-            label2.Size = new Size(81, 15);
-            label2.TabIndex = 14;
-            label2.Text = "People Online";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(50, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 15);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "People Online";
             // 
             // listBox1
             // 
-            listBox1.BorderStyle = BorderStyle.FixedSingle;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(32, 27);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(118, 182);
-            listBox1.TabIndex = 12;
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(32, 27);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(118, 242);
+            this.listBox1.TabIndex = 12;
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ButtonFace;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(btnOpenChat);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(listBox1);
-            panel1.Location = new Point(573, 49);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(189, 293);
-            panel1.TabIndex = 15;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnOpenChat);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Location = new System.Drawing.Point(573, 49);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(189, 334);
+            this.panel1.TabIndex = 15;
             // 
             // btnOpenChat
             // 
-            btnOpenChat.BackColor = Color.MediumSlateBlue;
-            btnOpenChat.BackgroundColor = Color.MediumSlateBlue;
-            btnOpenChat.BorderColor = Color.PaleVioletRed;
-            btnOpenChat.BorderRadius = 40;
-            btnOpenChat.BorderSize = 0;
-            btnOpenChat.FlatAppearance.BorderSize = 0;
-            btnOpenChat.FlatAppearance.MouseDownBackColor = Color.Lime;
-            btnOpenChat.FlatStyle = FlatStyle.Flat;
-            btnOpenChat.ForeColor = Color.White;
-            btnOpenChat.Location = new Point(40, 217);
-            btnOpenChat.Name = "btnOpenChat";
-            btnOpenChat.Size = new Size(105, 56);
-            btnOpenChat.TabIndex = 15;
-            btnOpenChat.Text = "Open Chat";
-            btnOpenChat.TextColor = Color.White;
-            btnOpenChat.UseVisualStyleBackColor = false;
-            btnOpenChat.Click += btnOpenChat_Click;
+            this.btnOpenChat.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnOpenChat.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnOpenChat.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnOpenChat.BorderRadius = 40;
+            this.btnOpenChat.BorderSize = 0;
+            this.btnOpenChat.FlatAppearance.BorderSize = 0;
+            this.btnOpenChat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnOpenChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenChat.ForeColor = System.Drawing.Color.White;
+            this.btnOpenChat.Location = new System.Drawing.Point(45, 273);
+            this.btnOpenChat.Name = "btnOpenChat";
+            this.btnOpenChat.Size = new System.Drawing.Size(105, 56);
+            this.btnOpenChat.TabIndex = 15;
+            this.btnOpenChat.Text = "Open Chat";
+            this.btnOpenChat.TextColor = System.Drawing.Color.White;
+            this.btnOpenChat.UseVisualStyleBackColor = false;
+            this.btnOpenChat.Click += new System.EventHandler(this.btnOpenChat_Click);
             // 
             // panel3
             // 
-            panel3.BackColor = SystemColors.ButtonFace;
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(btnOpenGroup);
-            panel3.Controls.Add(btnCreatGroup);
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(listBox3);
-            panel3.Location = new Point(797, 49);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(189, 293);
-            panel3.TabIndex = 17;
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnOpenGroup);
+            this.panel3.Controls.Add(this.btnCreatGroup);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.listBox3);
+            this.panel3.Location = new System.Drawing.Point(797, 49);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(189, 334);
+            this.panel3.TabIndex = 17;
             // 
             // btnOpenGroup
             // 
-            btnOpenGroup.BackColor = Color.MediumSlateBlue;
-            btnOpenGroup.BackgroundColor = Color.MediumSlateBlue;
-            btnOpenGroup.BorderColor = Color.PaleVioletRed;
-            btnOpenGroup.BorderRadius = 40;
-            btnOpenGroup.BorderSize = 0;
-            btnOpenGroup.FlatAppearance.BorderSize = 0;
-            btnOpenGroup.FlatAppearance.MouseDownBackColor = Color.Lime;
-            btnOpenGroup.FlatStyle = FlatStyle.Flat;
-            btnOpenGroup.ForeColor = Color.White;
-            btnOpenGroup.Location = new Point(4, 223);
-            btnOpenGroup.Name = "btnOpenGroup";
-            btnOpenGroup.Size = new Size(84, 45);
-            btnOpenGroup.TabIndex = 21;
-            btnOpenGroup.Text = "Open Group";
-            btnOpenGroup.TextColor = Color.White;
-            btnOpenGroup.UseVisualStyleBackColor = false;
-            btnOpenGroup.Click += btnOpenGroup_Click;
+            this.btnOpenGroup.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnOpenGroup.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnOpenGroup.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnOpenGroup.BorderRadius = 40;
+            this.btnOpenGroup.BorderSize = 0;
+            this.btnOpenGroup.FlatAppearance.BorderSize = 0;
+            this.btnOpenGroup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnOpenGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenGroup.ForeColor = System.Drawing.Color.White;
+            this.btnOpenGroup.Location = new System.Drawing.Point(3, 284);
+            this.btnOpenGroup.Name = "btnOpenGroup";
+            this.btnOpenGroup.Size = new System.Drawing.Size(84, 45);
+            this.btnOpenGroup.TabIndex = 21;
+            this.btnOpenGroup.Text = "Open Group";
+            this.btnOpenGroup.TextColor = System.Drawing.Color.White;
+            this.btnOpenGroup.UseVisualStyleBackColor = false;
+            this.btnOpenGroup.Click += new System.EventHandler(this.btnOpenGroup_Click);
             // 
             // btnCreatGroup
             // 
-            btnCreatGroup.BackColor = Color.MediumSlateBlue;
-            btnCreatGroup.BackgroundColor = Color.MediumSlateBlue;
-            btnCreatGroup.BorderColor = Color.PaleVioletRed;
-            btnCreatGroup.BorderRadius = 40;
-            btnCreatGroup.BorderSize = 0;
-            btnCreatGroup.FlatAppearance.BorderSize = 0;
-            btnCreatGroup.FlatAppearance.MouseDownBackColor = Color.Lime;
-            btnCreatGroup.FlatStyle = FlatStyle.Flat;
-            btnCreatGroup.ForeColor = Color.White;
-            btnCreatGroup.Location = new Point(96, 223);
-            btnCreatGroup.Name = "btnCreatGroup";
-            btnCreatGroup.Size = new Size(84, 45);
-            btnCreatGroup.TabIndex = 21;
-            btnCreatGroup.Text = "Create Group";
-            btnCreatGroup.TextColor = Color.White;
-            btnCreatGroup.UseVisualStyleBackColor = false;
-            btnCreatGroup.Click += btnCreatGroup_Click;
+            this.btnCreatGroup.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCreatGroup.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCreatGroup.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCreatGroup.BorderRadius = 40;
+            this.btnCreatGroup.BorderSize = 0;
+            this.btnCreatGroup.FlatAppearance.BorderSize = 0;
+            this.btnCreatGroup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnCreatGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreatGroup.ForeColor = System.Drawing.Color.White;
+            this.btnCreatGroup.Location = new System.Drawing.Point(100, 284);
+            this.btnCreatGroup.Name = "btnCreatGroup";
+            this.btnCreatGroup.Size = new System.Drawing.Size(84, 45);
+            this.btnCreatGroup.TabIndex = 21;
+            this.btnCreatGroup.Text = "Create Group";
+            this.btnCreatGroup.TextColor = System.Drawing.Color.White;
+            this.btnCreatGroup.UseVisualStyleBackColor = false;
+            this.btnCreatGroup.Click += new System.EventHandler(this.btnCreatGroup_Click);
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(65, 4);
-            label3.Name = "label3";
-            label3.Size = new Size(45, 15);
-            label3.TabIndex = 14;
-            label3.Text = "Groups";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(65, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 15);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Groups";
             // 
             // listBox3
             // 
-            listBox3.BorderStyle = BorderStyle.FixedSingle;
-            listBox3.FormattingEnabled = true;
-            listBox3.ItemHeight = 15;
-            listBox3.Items.AddRange(new object[] { "Global" });
-            listBox3.Location = new Point(32, 27);
-            listBox3.Name = "listBox3";
-            listBox3.Size = new Size(118, 182);
-            listBox3.TabIndex = 12;
+            this.listBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 15;
+            this.listBox3.Items.AddRange(new object[] {
+            "Global"});
+            this.listBox3.Location = new System.Drawing.Point(32, 27);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(118, 242);
+            this.listBox3.TabIndex = 12;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(12, 9);
-            label4.Name = "label4";
-            label4.Size = new Size(81, 15);
-            label4.TabIndex = 18;
-            label4.Text = "Connected as:";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(12, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 15);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Connected as:";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(12, 31);
-            label5.Name = "label5";
-            label5.Size = new Size(108, 15);
-            label5.TabIndex = 19;
-            label5.Text = "Chatting in: Global";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(12, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 15);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Chatting in: Global";
             // 
             // round_Button1
             // 
-            round_Button1.BackColor = Color.MediumSlateBlue;
-            round_Button1.BackgroundColor = Color.MediumSlateBlue;
-            round_Button1.BorderColor = Color.PaleVioletRed;
-            round_Button1.BorderRadius = 40;
-            round_Button1.BorderSize = 0;
-            round_Button1.FlatAppearance.BorderSize = 0;
-            round_Button1.FlatAppearance.MouseDownBackColor = Color.Lime;
-            round_Button1.FlatAppearance.MouseOverBackColor = Color.BlueViolet;
-            round_Button1.FlatStyle = FlatStyle.Flat;
-            round_Button1.ForeColor = Color.White;
-            round_Button1.Location = new Point(463, 409);
-            round_Button1.Name = "round_Button1";
-            round_Button1.Size = new Size(84, 38);
-            round_Button1.TabIndex = 20;
-            round_Button1.Text = "Send";
-            round_Button1.TextColor = Color.White;
-            round_Button1.UseVisualStyleBackColor = false;
-            round_Button1.Click += round_Button1_Click;
+            this.round_Button1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.round_Button1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.round_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.round_Button1.BorderRadius = 40;
+            this.round_Button1.BorderSize = 0;
+            this.round_Button1.FlatAppearance.BorderSize = 0;
+            this.round_Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.round_Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet;
+            this.round_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.round_Button1.ForeColor = System.Drawing.Color.White;
+            this.round_Button1.Location = new System.Drawing.Point(463, 409);
+            this.round_Button1.Name = "round_Button1";
+            this.round_Button1.Size = new System.Drawing.Size(84, 38);
+            this.round_Button1.TabIndex = 20;
+            this.round_Button1.Text = "Send";
+            this.round_Button1.TextColor = System.Drawing.Color.White;
+            this.round_Button1.UseVisualStyleBackColor = false;
+            this.round_Button1.Click += new System.EventHandler(this.round_Button1_Click);
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(1013, 481);
-            Controls.Add(round_Button1);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(panel3);
-            Controls.Add(panel1);
-            Controls.Add(textBox2);
-            Controls.Add(richTextBox1);
-            Name = "Form1";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
-            FormClosed += Form1_FormClosed;
-            Load += Form1_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1013, 481);
+            this.Controls.Add(this.round_Button1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.richTextBox1);
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Form1";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

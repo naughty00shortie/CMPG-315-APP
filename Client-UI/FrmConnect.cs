@@ -17,14 +17,22 @@ namespace Client_UI
             InitializeComponent();
         }
 
-
-        private void btnLogin_Click_1(object sender, EventArgs e)
+        
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             btnLogin.Visible = false;
             textBox1.Visible = false;
             Form1 frm = new Form1(textBox1.Text);
             this.Hide();
             frm.Show();
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
         }
     }
 }

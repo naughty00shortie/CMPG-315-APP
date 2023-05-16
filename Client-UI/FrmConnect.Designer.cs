@@ -28,73 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            btnLogin = new Round_Button();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnLogin = new Client_UI.Round_Button();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(60, 70);
-            label1.Name = "label1";
-            label1.Size = new Size(72, 15);
-            label1.TabIndex = 5;
-            label1.Text = "Enter Name:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(60, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Enter Name:";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(60, 88);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(165, 23);
-            textBox1.TabIndex = 4;
+            this.textBox1.Location = new System.Drawing.Point(60, 88);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(165, 23);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Sylfaen", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(41, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(228, 35);
-            label2.TabIndex = 7;
-            label2.Text = "Local Messegener";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Sylfaen", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(41, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(228, 35);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Local Messegener";
             // 
             // btnLogin
             // 
-            btnLogin.BackColor = Color.DarkSlateBlue;
-            btnLogin.BackgroundColor = Color.DarkSlateBlue;
-            btnLogin.BorderColor = Color.MediumPurple;
-            btnLogin.BorderRadius = 40;
-            btnLogin.BorderSize = 0;
-            btnLogin.FlatAppearance.BorderSize = 0;
-            btnLogin.FlatAppearance.MouseDownBackColor = Color.Lime;
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(91, 119);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(108, 54);
-            btnLogin.TabIndex = 8;
-            btnLogin.Text = "Login";
-            btnLogin.TextColor = Color.White;
-            btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.Click += btnLogin_Click_1;
+            this.btnLogin.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnLogin.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnLogin.BorderColor = System.Drawing.Color.MediumPurple;
+            this.btnLogin.BorderRadius = 40;
+            this.btnLogin.BorderSize = 0;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(91, 119);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(108, 54);
+            this.btnLogin.TabIndex = 8;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.TextColor = System.Drawing.Color.White;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // FrmConnect
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(297, 206);
-            Controls.Add(btnLogin);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBox1);
-            Name = "FrmConnect";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmConnect";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(297, 206);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Name = "FrmConnect";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FrmConnect";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

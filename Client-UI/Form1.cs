@@ -109,10 +109,7 @@ namespace Client_UI
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            sendMessage(textBox2.Text);
-        }
+
 
         public async void sendMessage(string message)
         {
@@ -160,23 +157,25 @@ namespace Client_UI
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void round_Button1_Click(object sender, EventArgs e)
         {
             sendMessage(textBox2.Text);
         }
 
-        private void round_Button2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnOpenChat_Click(object sender, EventArgs e)
         {
+            if (listBox1.SelectedItem != null)
+            {
+                richTextBox1.Clear();
+                string message = listBox1.SelectedItem.ToString().Replace("\n", "");
+                sendMessage("#CHAT#" + message);
+                label5.Text = "Chatting in: " + message;
+            }
+
+            Thread.Sleep(500);
+
             if (listBox1.SelectedItem != null)
             {
                 richTextBox1.Clear();
@@ -201,6 +200,13 @@ namespace Client_UI
         {
             FrmGroup frmGroup = new FrmGroup(listBox1, this, connectedName);
             frmGroup.Show();
+        }
+
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                round_Button1_Click(null, null);
         }
     }
 }

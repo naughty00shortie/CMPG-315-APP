@@ -23,17 +23,6 @@ namespace Client_UI
             this.name = name;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string message = "#CREATE#" + name + "|";
-            foreach (var item in listBox2.Items)
-            {
-                message += item.ToString() + "|";
-            }
-
-            mainForm.sendMessage(message.Substring(0, message.Length - 1));
-            this.Close();
-        }
 
         private void FrmGroup_Load(object sender, EventArgs e)
         {
@@ -47,25 +36,6 @@ namespace Client_UI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-
-
-            if (listBox1.SelectedItem != null)
-            {
-                listBox2.Items.Add(listBox1.SelectedItem);
-                listBox1.Items.Remove(listBox1.SelectedItem);
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (listBox2.SelectedItem != null)
-            {
-                listBox2.Items.Remove(listBox2.SelectedItem);
-            }
-        }
 
         private void btnAddToGroup_Click(object sender, EventArgs e)
         {
@@ -94,21 +64,6 @@ namespace Client_UI
 
             mainForm.sendMessage(message.Substring(0, message.Length - 1));
             this.Close();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
